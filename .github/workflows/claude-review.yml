@@ -1,0 +1,14 @@
+name: Claude review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    uses: space0w1-labs/ci/.github/workflows/claude-review.yml@main
+    secrets: inherit
